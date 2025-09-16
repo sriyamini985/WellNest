@@ -16,6 +16,22 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          vendor: ['framer-motion', 'lucide-react', 'recharts'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
   define: {
     'process.env': {}
