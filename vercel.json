@@ -1,7 +1,8 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "WellNest/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
@@ -10,11 +11,9 @@
   ],
   "routes": [
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "src": "/(.*)",
+      "dest": "/WellNest/index.html"
     }
   ],
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
+  "buildCommand": "cd WellNest && npm install && npm run build"
 }
