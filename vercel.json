@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "WellNest/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -14,6 +11,5 @@
       "src": "/(.*)",
       "dest": "/WellNest/index.html"
     }
-  ],
-  "buildCommand": "cd WellNest && npm install && npm run build"
+  ]
 }
